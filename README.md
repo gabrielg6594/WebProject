@@ -2,7 +2,7 @@
 
 ## Explanation 
 
-In this code I have a frame for the original calendar in the middle. Using this it is possible to go around and see through the different days, months, and years. Aside from this I use JSON in `<script>` this part of a structure of code that is in a ``html`` file converts what ever is written inside into javascript code, in this case we need it to be JSON format in order to make events. 
+In this code I have a frame for the original calendar in the middle of the page. Using this it is possible to go around and see through the different days, months, and years. Aside from this I use JSON in `<script>` this part of a structure of code that is in a ``html`` file converts what ever is written inside into javascript code, in this case we need it to be JSON format in order to make events. 
 
 This is the structure of the JSON code that is needed in order for an event to show up on the calendar
 ```
