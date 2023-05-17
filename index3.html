@@ -1,0 +1,137 @@
+
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <title>Welcome to the Calendar</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="evo-calendar.min.css">
+        <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+    </head>
+    <body>
+        
+        <div class="heros">
+        
+            <div id="calendar"></div>
+            
+            <div class="pathOne">
+            
+            </div>
+
+
+
+            <div class = " container mt-5 mb-5 d-flex justify-content-center">
+                <div class = "w-25 test-center">
+                    <form action="myurl" method="POST" name="myForm">
+
+                        <p><label for="id">ID(anything that is unique):</label>
+                        <input type="text" name="id" id="newFormId"></p>
+
+                        <p><label for="name">Name:</label>
+                        <input type="text" name="name" id="newName"></p>
+                
+                        <p><label for="date">Date(Have the date a day more):</label>
+                        <input type="date" name="date" id="newDate"></p>
+                        
+                        <p><label for="description">Description:</label>
+                        <input type="text" name="description" id="newDiscription"></p>
+
+                        <p><label for="type">Type:</label>
+                        <input type="text" name="type" id="newType"></p>
+
+                        <!-- <input value="Submit" type="submit" onclick="submitform()"> -->
+                       
+
+                    </form>
+                    <button class="frmbtn" name="frbtn" >eventadd</button>
+                </div>
+            </div>
+
+            
+            <!-- <button name="postit" type="submit" class="btn">Add to calendar</button>   -->
+        </div>
+        
+         
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script> 
+        <script src="evo-calendar.min.js"></script>
+        
+        <script>
+            
+         
+            $(document).ready(function() {
+                $('#calendar').evoCalendar({
+                   
+                    theme: "Midnight Blue",
+                    calendarEvents: [
+                        {
+                            id: 'event1', // Event's ID (required)
+                            name: "New Year", // Event name (required)
+                            date: "January/1/2023", // Event date (required)
+                            description:"Enjoy the holiday",
+                            type: "holiday", // Event type (required)
+                            everyYear: true // Same event every year (optional)
+                        },
+                        {
+                            id:  'event2',
+                            name: "Vacation Leave",
+                            badge: "02/13 - 02/15", // Event badge (optional)
+                            date: ["February/13/2023", "February/15/2023"], // Date range
+                            description: "Vacation leave for 3 days.", // Event description (optional)
+                            type: "event",
+                            color: "#63d867" // Event custom color (optional)
+                        }
+                    ]
+                    
+                })
+            })
+        
+            const frmbtn = document.querySelector('.frmbtn');
+            frmbtn.addEventListener('click',function(addevent){               
+               console.log('button clicked');
+
+
+        var myid = document.querySelector("#newFormId").value;
+        var myname = document.querySelector('#newName').value;
+        var mydate = document.querySelector('#newDate').value;
+        var mytype = document.querySelector('#newType').value;
+        var mydiscript = document.querySelector('#newDiscription').value;
+
+        // var myeveryYear = document.querySelector()
+
+//       function(addevent){
+             $("#calendar").evoCalendar('addCalendarEvent', [
+            {
+             id: myid,
+             name: myname,
+             date: mydate,
+             type: mytype,
+             description: mydiscript,
+            //  everyYear: true
+           }
+         ]);
+        }); 
+// $("#calendar").evoCalendar('addCalendarEvent', [
+//     {
+//       id: '09nk7Ts',
+//       name: "Gabe Birthday",
+//       date: "May/15/2023",
+//       type: "birthday",
+//       everyYear: true
+//     }
+//   ]);
+// }); 
+
+        </script>
+        
+      
+        
+        
+        
+        
+    </body>
+    
+</html>
+        
+        
+        
+        
